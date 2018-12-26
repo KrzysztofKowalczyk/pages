@@ -1,37 +1,68 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/KrzysztofKowalczyk/pages/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```java
+public static void hello() {
+    System.out.println("world");
+}
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+```sh
+echo "hello world"
+```
 
-### Jekyll Themes
+```mermaid(50h)
+graph TD
+A[Christmas] -->|Get money| B(Go shopping)
+B --> C{Let me think}
+C -->|One| D[Laptop]
+C -->|Two| E[iPhone]
+C -->|Three| F[fa:fa-car Car]
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/KrzysztofKowalczyk/pages/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```mermaid(50h)
+sequenceDiagram
+participant Alice
+participant Bob
+Alice->John: Hello John, how are you?
+loop Healthcheck
+    John->John: Fight against hypochondria
+end
+Note right of John: Rational thoughts <br/>prevail...
+John-->Alice: Great!
+John->Bob: How about you?
+Bob-->John: Jolly good!
+```
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+```chart
+{
+  "type": "polarArea",
+  "data": {
+    "datasets": [
+      {
+        "data": [
+          11,
+          16,
+          7,
+          3,
+          14
+        ],
+        "backgroundColor": [
+          "#FF6384",
+          "#4BC0C0",
+          "#FFCE56",
+          "#E7E9ED",
+          "#36A2EB"
+        ],
+        "label": "My dataset"
+      }
+    ],
+    "labels": [
+      "Red",
+      "Green",
+      "Yellow",
+      "Grey",
+      "Blue"
+    ]
+  },
+  "options": {}
+}
+```
