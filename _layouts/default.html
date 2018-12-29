@@ -13,6 +13,7 @@
     <script src="{{ '/assets/js/codemirror.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/squire.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/highlight.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/mermaid.min.js' | relative_url }}"></script>
     
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
@@ -77,6 +78,14 @@
         height: 500,
         viewer: true
       });
+
+      path = null
+
+      if (path !== window.location.pathname) {
+        path = window.location.pathname
+        window.mermaid.initialize({ theme: 'default' })
+        window.mermaid.init(undefined, document.querySelectorAll('.lang-mermaid'))
+      }
       </script>
 
       <footer>

@@ -5,6 +5,7 @@ Todo:
 - [x] Render using tui.editor
 - [ ] Support for mermaid in fences
 - [ ] Solve lack of .hljs on pre (lack of style background from highlight.js themes for code :/)
+- [ ] Customize or pick better theme
 
 A **simple** md *file*
 
@@ -30,7 +31,7 @@ echo "hello world"
 
 
 A graph
-```mermaid(50h)
+```mermaid
 graph TD
 A[Christmas] -->|Get money| B(Go shopping)
 B --> C{Let me think}
@@ -40,7 +41,7 @@ C -->|Three| F[fa:fa-car Car]
 ```
 
 Sequence diagram
-```mermaid(50h)
+```mermaid
 sequenceDiagram
 participant Alice
 participant Bob
