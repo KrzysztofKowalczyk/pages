@@ -83,9 +83,22 @@
 
       if (path !== window.location.pathname) {
         path = window.location.pathname
-        window.mermaid.initialize({ theme: 'default' })
+        window.mermaid.initialize({ theme: 'neutral' })
         window.mermaid.init(undefined, document.querySelectorAll('.lang-mermaid'))
       }
+
+      // use highlight js style for code
+      $('code[data-processed!="true"]').parent().addClass("hljs")
+      </script>
+
+      {%- comment -%} Remove color from pre for Mermaid {%- endcomment -%}
+      <style>
+      pre.clear {
+        background: transparent
+      }
+      </style>
+      <script>
+      $('code.lang-mermaid').parent().addClass("clear")
       </script>
 
       <footer>

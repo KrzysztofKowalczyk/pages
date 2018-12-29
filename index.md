@@ -1,10 +1,10 @@
-
 # Markdown based github pages using different md renderer
 
 Todo:
 - [x] Render using tui.editor
-- [ ] Support for mermaid in fences
-- [ ] Solve lack of .hljs on pre (lack of style background from highlight.js themes for code :/)
+- [x] Support for mermaid in fences
+- [x] Solve lack of .hljs on pre (lack of style background from highlight.js themes for code :/)
+- [ ] tui.editor mermaid extension so it works in editor not only viewer
 - [ ] Customize or pick better theme
 
 A **simple** md *file*
