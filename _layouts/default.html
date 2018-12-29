@@ -5,8 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 {% seo %}
+
+    <script src="{{ '/assets/js/jquery.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/markdown-it.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/to-mark.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/tui-code-snippet.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/codemirror.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/squire.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/highlight.min.js' | relative_url }}"></script>
+    
+
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{{ '/assets/css/codemirror.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/tui-editor.css' | relative_url }}">
+    <!-- Style does not work well with rest of theme or highlight js styles -->
+    <link rel="stylesheet" href="{{ '/assets/css/tui-editor-contents.css' | relative_url }}"> 
+    <link rel="stylesheet" href="{{ '/assets/css/tui-color-picker.css' | relative_url }}">
+
+    <link rel="stylesheet" href="{{ '/assets/css/hljs/solarized-dark.css' | relative_url }}">
+    
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
     <!--[if lt IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
@@ -15,6 +33,10 @@
 
   </head>
   <body>
+      <script src="{{ '/assets/js/tui-color-picker.js' | relative_url }}"></script>
+      <script src="{{ '/assets/js/tui-editor-Editor.js' | relative_url }}"></script>
+      <script src="{{ '/assets/js/tui-editor-extScrollSync.js' | relative_url }}"></script>
+      <script src="{{ '/assets/js/tui-editor-extTable.js' | relative_url }}"></script>
 
       <header>
         <h1>{{ site.title | default: site.github.repository_name }}</h1>
@@ -32,14 +54,33 @@
         <ul></ul>
       </nav>
       <section>
-        {{ content }}
+        <div id="editSection"></div>
       </section>
 
+      <script>
+      {%- comment -%} 
+      // editor
+      $('#editSection').tuiEditor({
+        el: document.querySelector('#editSection'),
+        initialEditType: 'markdown',
+        previewStyle: 'vertical',
+        initialValue: {{ page.content | jsonify }},
+        height: 500,
+        exts: ['scrollSync', 'colorSyntax']
+      }); 
+      {%- endcomment -%}
+
+      // viewer only
+      $('#editSection').tuiEditor({
+        el: document.querySelector('#editSection'),
+        initialValue: {{ page.content | jsonify }},
+        height: 500,
+        viewer: true
+      });
+      </script>
+
       <footer>
-        {% if site.github.is_project_page %}
-          <p>Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-        {% endif %}
-        <p><small>Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></small></p>
+        <p><small>Theme based on leap-day by <a href="https://twitter.com/mattgraham">mattgraham</a></small></p>
       </footer>
     </div>
   </body>

@@ -1,14 +1,35 @@
 
+# Markdown based github pages using different md renderer
+
+Todo:
+- [x] Render using tui.editor
+- [ ] Support for mermaid in fences
+- [ ] Solve lack of .hljs on pre (lack of style background from highlight.js themes for code :/)
+
+A **simple** md *file*
+
+A list
+- a
+- b
+- c
+
+[link to nowhere](nowhere)
+
+
+Java code
 ```java
 public static void hello() {
     System.out.println("world");
 }
 ```
 
+shell code
 ```sh
 echo "hello world"
 ```
 
+
+A graph
 ```mermaid(50h)
 graph TD
 A[Christmas] -->|Get money| B(Go shopping)
@@ -18,6 +39,7 @@ C -->|Two| E[iPhone]
 C -->|Three| F[fa:fa-car Car]
 ```
 
+Sequence diagram
 ```mermaid(50h)
 sequenceDiagram
 participant Alice
@@ -30,39 +52,4 @@ Note right of John: Rational thoughts <br/>prevail...
 John-->Alice: Great!
 John->Bob: How about you?
 Bob-->John: Jolly good!
-```
-
-```chart
-{
-  "type": "polarArea",
-  "data": {
-    "datasets": [
-      {
-        "data": [
-          11,
-          16,
-          7,
-          3,
-          14
-        ],
-        "backgroundColor": [
-          "#FF6384",
-          "#4BC0C0",
-          "#FFCE56",
-          "#E7E9ED",
-          "#36A2EB"
-        ],
-        "label": "My dataset"
-      }
-    ],
-    "labels": [
-      "Red",
-      "Green",
-      "Yellow",
-      "Grey",
-      "Blue"
-    ]
-  },
-  "options": {}
-}
 ```
